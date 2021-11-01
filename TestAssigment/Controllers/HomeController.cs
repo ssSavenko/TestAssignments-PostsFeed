@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq; 
+using System.Linq;
 using TestAssigment.Models.DAL;
 using TestAssigment.Models.ControllerResultObjects;
-using Microsoft.AspNetCore.Cors;
 
 namespace TestAssigment.Controllers
 {

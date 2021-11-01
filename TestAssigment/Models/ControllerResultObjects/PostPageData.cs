@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using TestAssigment.Models.DAL;
+using System.Threading.Tasks; 
+using TestAssignment.Models.DataInterfaces;
 
 namespace TestAssigment.Models.ControllerResultObjects
 {
     public class PostPageData : IPostPageData
     {
 
-        private DbPostData postInfo;
+        private IPostData postInfo;
 
-        private IEnumerable<DbPostItem> postItems;
+        private IEnumerable<IPostItem> postItems;
 
-        private IEnumerable<DbComments> comments;
+        private IEnumerable<IComment> comments;
 
-        public DbPostData PostInfo { get => postInfo; set => postInfo = value; }
-        public IEnumerable<DbPostItem> PostItems { get => postItems; set => postItems = value; }
-        public IEnumerable<DbComments> Comments { get => comments; set => comments = value; }
+        public IPostData PostInfo { get => postInfo; set => postInfo = value; }
+        public IEnumerable<IPostItem> PostItems { get => postItems; set => postItems = value; }
+        public IEnumerable<IComment> Comments { get => comments; set => comments = value; }
     }
 }

@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using TestAssignment.Models.DataInterfaces;
 
 namespace TestAssigment.Models.DAL
 {
-    public class DbPostData : DbBase
+    public class DbPostData : DbBase, IPostData
     {
         public string Name { get; set; }
 

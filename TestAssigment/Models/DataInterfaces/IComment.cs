@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TestAssignment.Models.DataInterfaces;
 
-namespace TestAssigment.Models.DAL
+namespace TestAssignment.Models.DataInterfaces
 {
-    public class DbComments: DbBase, IComment
+    public interface IComment
     {
         public string UsersName { get; set; }
 

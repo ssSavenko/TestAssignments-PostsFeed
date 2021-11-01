@@ -3,30 +3,28 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using TestAssigment.Models.DAL;
 using TestAssigment.Models.ControllerResultObjects;
-using Microsoft.AspNetCore.Cors;
-using Newtonsoft.Json.Linq; 
+using Newtonsoft.Json.Linq;
 
 namespace TestAssigment.Controllers
 {
     [ApiController]
-    [Route("Home/Post/{postNumber}")] 
+    [Route("Home/Post/{postNumber}")]
     public class PostController
-    { 
+    {
         DatabseContext context;
 
         public PostController(DatabseContext context)
         {
             this.context = context;
-            
+
         }
 
         [HttpGet]
         public IPostPageData Get(uint postNumber)
         {
-            DbPostData postInfo = context.PostsData.FirstOrDefault(item => item.PageNum ==  postNumber);
+            DbPostData postInfo = context.PostsData.FirstOrDefault(item => item.PageNum == postNumber);
             List<DbPostItem> postItems = context.PostItem?.Where(item => item.PostId == postInfo.Id)?.OrderBy(item => item.NumberOfPostItem)?.ToList();
             List<DbComments> comments = context.Comments?.Where(item => item.PostsId == postInfo.Id)?.OrderBy(item => item.CreatedOn)?.ToList();
 
@@ -54,7 +52,7 @@ namespace TestAssigment.Controllers
                 context.Comments.Add(newComment);
                 context.SaveChanges();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 //logger place
                 throw e;

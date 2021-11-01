@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks; 
-using TestAssigment.Models.DAL;
-using TestAssignment.Init; 
+﻿using TestAssigment.Models.DAL;
+using TestAssignment.Init;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TestAssignment.Controllers

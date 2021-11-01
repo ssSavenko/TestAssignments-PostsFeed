@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TestAssigment.Models.DAL;
+﻿ 
+using System.Collections.Generic;  
+using TestAssignment.Models.DataInterfaces;
 
 namespace TestAssigment.Models.ControllerResultObjects
 {
@@ -12,9 +10,9 @@ namespace TestAssigment.Models.ControllerResultObjects
 
         private bool hasPrev = false;
 
-        private IEnumerable<DbPostData> resultList = null;
+        private IEnumerable<IPostData> resultList = null;
          
-        public IEnumerable<DbPostData> ResultList
+        public IEnumerable<IPostData> ResultList
         {
             get { return resultList; }
             set { resultList = value; }
@@ -31,5 +29,6 @@ namespace TestAssigment.Models.ControllerResultObjects
             get { return hasPrev; }
             set { hasPrev = value; }
         }
+         
     }
 }
